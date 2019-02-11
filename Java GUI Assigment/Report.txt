@@ -1,0 +1,40 @@
+GUI assessment report Prabodh Rai 
+
+My GUI class contains several components that make up the GUI of the game;
+
+All frame based classes: all frames have a JMenuBar compontent included into the gamewindow, two menus are created
+with accosiated submenus added to them. Menu functions are called from the action listener to travel between frames.
+The submenu "about the game" displays a JDialog with a JLable of text explaining the game, with setsize and visiablity. 
+The submenu restart quiz returns to the first frame of the game.
+
+MakeFrame Method:
+JBUtton start 1 is used in the makeFrame method, that contentPane of that method is set to the layout 
+of a borderlayout. A jlable with text has been aligned with a swing constants center. A image icon loads
+an image location from the project directory, the icon is then set to the icon of the game window via
+frame.setIconImage. Jbutton start1 button starts the game so has been colored green, three individual
+Jpanels with gridlayouts, contentPane adds the jpanels with the border layout north, center and south respectively
+to layout the title, image and button. Frame was set to visible, revalidated and repaint.
+
+quiz 1-2,5-6 Method:
+Question 1-2,5-6 methods have the compontents and layout from the makeFrame methods with the addition of more buttons
+for the answers in the quiz with added action listeners that will get the action event of the Jbuttons. The button strings
+are called from the game class. I have also added a JProgressBar that shows the progress of the quiz, the progressBar was 
+added to the l border layout in the center of the layout.
+
+quiz 3-4 Method: 
+quiz3() method uses JTextField that allows an user to input a text field however with an character limit of 20, an action lister was
+assigned to the Jtextfield to read the users input to the field for the correct answer.
+quiz4() method includes 4 images that set to the JButton answers, the JButton had an addtional parameter taken for the button string name called 
+from the game class.
+
+
+endquiz() Method:
+endquiz() method accumulates the total correct and incorrect answers via the game class and outputs that information to the text label in the JPanel l
+with the borderlayout set to South. The JProgessBar reaches its limit of 100 in this frame.
+
+
+ActionPerformed method:
+the event.getActionCommand() reads all action listers in the class and appropriately assigns to the next frames via
+the if, else if statments. To avoid frame duplication contentPane.removeAll();,  frame.revalidate() were added.
+The JOptionPane component was added to display user's selected answers (called from the game class) in a new window.
+
